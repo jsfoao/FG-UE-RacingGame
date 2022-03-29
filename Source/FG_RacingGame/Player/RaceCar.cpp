@@ -24,6 +24,8 @@ void ARaceCar::HandleAccelerateInput(float Value)
 		FColor::White,
 		FString::Printf(TEXT("Accelerate: %f"), Value)
 	);
+
+	MoveComp->SetAccelDirection(Value);
 }
 
 void ARaceCar::HandleTurnRightInput(float Value)
@@ -34,5 +36,7 @@ void ARaceCar::HandleTurnRightInput(float Value)
 		FColor::White,
 		FString::Printf(TEXT("Turn Right: %f"), Value)
 	);
+
+	MoveComp->SetTurnDirection(Value);
 }
 
