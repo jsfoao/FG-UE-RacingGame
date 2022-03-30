@@ -22,6 +22,8 @@ void ARaceCamera::BeginPlay()
 
 void ARaceCamera::Tick(float DeltaTime)
 {
+	check(FollowActor != nullptr);
+	
 	FVector Location = GetActorLocation();
 	Location = FMath::Lerp(Location, FollowActor->GetActorLocation(), FollowSpeed * DeltaTime);
 

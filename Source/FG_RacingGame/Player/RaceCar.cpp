@@ -5,6 +5,7 @@
 ARaceCar::ARaceCar()
 {
 	BoxCollision = CreateDefaultSubobject<UBoxComponent>(TEXT("Collision"));
+	BoxCollision->SetCollisionProfileName("BlockAllDynamic");
 	RootComponent = BoxCollision;
 
 	MoveComp = CreateDefaultSubobject<URaceCarMovementComponent>(TEXT("Movement Component"));
@@ -25,7 +26,7 @@ void ARaceCar::HandleAccelerateInput(float Value)
 		FString::Printf(TEXT("Accelerate: %f"), Value)
 	);
 
-	MoveComp->SetAccelDirection(Value);
+	MoveComp->AccelInput = Value;
 }
 
 void ARaceCar::HandleTurnRightInput(float Value)
@@ -37,6 +38,6 @@ void ARaceCar::HandleTurnRightInput(float Value)
 		FString::Printf(TEXT("Turn Right: %f"), Value)
 	);
 
-	MoveComp->SetTurnDirection(Value);
+	MoveComp->TurnInput = Value;
 }
 
