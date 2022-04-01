@@ -55,7 +55,7 @@ void URaceCarMovementComponent::Accelerate(float DeltaTime)
 			// Depenetration
 			if (Hit.bStartPenetrating)
 			{
-				Owner->AddActorWorldOffset(Hit.Normal * (Hit.PenetrationDepth + 32.f));
+				Owner->AddActorWorldOffset(Hit.Normal * (Hit.PenetrationDepth + 1.f));
 			}
 			// Otherwise, just redirect and keep going
 			else
